@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
+  get 'signup', to: 'users#new'
   
+
   root "pages#home"
 
   resources :articles
+  resources :users, except: [:new]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
